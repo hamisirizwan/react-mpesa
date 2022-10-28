@@ -7,8 +7,10 @@ function Docs() {
       <p className="text text-primary fs-4 fw-normal">
         REACT MPESA INTERGRATION
       </p>
-      <h4 className="text">BY DEV RIZWAN</h4>
-      <p>
+      <h4 className="text">
+        <em>BY DEV RIZWAN</em>
+      </h4>
+      <p className="mt-3">
         LIPA NA M-PESA ONLINE API also know as M-PESA express (STK Push) is a
         Merchant/Business initiated C2B (Customer to Business) Payment. I, Dev
         Rizwan have gone through the unguided 🙄 Safaricom Daraja API docs to

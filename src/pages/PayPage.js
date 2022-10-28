@@ -25,6 +25,19 @@ function PayPage() {
           PAY
         </button>
       </form>
+      <div className="mt-3">
+        <p className="text fs-4 fw-normal">Need Help?</p>
+        <p className="text fs-5 fw-light">Reach Out: 0768793923</p>
+        <p className="text fs-5 fw-normal">
+          GitHub Repo:{" "}
+          <a
+            href="https://github.com/hamisirizwan/react-mpesa"
+            style={{ textDecoration: "none" }}
+          >
+            get code
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

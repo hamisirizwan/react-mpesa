@@ -19,9 +19,9 @@ function NavBar() {
             //   className="w-full -mt-4 sm:-mt-4 lg:mt-0"
           />
         </div>
-        <div>
-          <p className="text">Docs</p>
-        </div>
+        {/* <div>
+          <p className="text d-block d-lg-none">Docs</p>
+        </div> */}
       </div>
     </div>
   );
