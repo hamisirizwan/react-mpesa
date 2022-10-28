@@ -33,27 +33,30 @@ function PayPage() {
       return alert("valid number should start with 07 or 01");
     }
     //send request
+    alert(
+      "STILL WORKING ON IT BE PATIENT 😋😋 \n Check tommorrow I should be through 🤩🤩"
+    );
 
-    try {
-      const key = "s0L1YFYzr4eGANAiVtmhPum9Us9pQnaT";
-      const secret = "goca51EHNnZnQHOA";
-      const auth = new Buffer.from(`${key}:${secret}`).toString("base64");
+    // try {
+    //   const key = "s0L1YFYzr4eGANAiVtmhPum9Us9pQnaT";
+    //   const secret = "goca51EHNnZnQHOA";
+    //   const auth = new Buffer.from(`${key}:${secret}`).toString("base64");
 
-      const tokenData = await axios.get(
-        "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
-        {
-          headers: {
-            "Content-Type": "application/json",
-            authorization: `Basic ${auth}`,
-          },
-        }
-      );
+    //   const tokenData = await axios.get(
+    //     "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+    //     {
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         authorization: `Basic ${auth}`,
+    //       },
+    //     }
+    //   );
 
-      console.log(tokenData);
-    } catch (error) {
-      console.log(error);
-      alert(error.message);
-    }
+    //   console.log(tokenData);
+    // } catch (error) {
+    //   console.log(error);
+    //   alert(error.message);
+    // }
   };
 
   return (
