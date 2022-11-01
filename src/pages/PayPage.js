@@ -33,30 +33,69 @@ function PayPage() {
       return alert("valid number should start with 07 or 01");
     }
     //send request
-    alert(
-      "STILL WORKING ON IT BE PATIENT 😋😋 \n Check tommorrow I should be through 🤩🤩"
-    );
+    // alert(
+    //   "STILL WORKING ON IT BE PATIENT 😋😋 \n Check tommorrow I should be through 🤩🤩"
+    // );
 
-    // try {
-    //   const key = "s0L1YFYzr4eGANAiVtmhPum9Us9pQnaT";
-    //   const secret = "goca51EHNnZnQHOA";
-    //   const auth = new Buffer.from(`${key}:${secret}`).toString("base64");
+    const proxy = "https://proxy.cors.sh";
+    try {
+      const key = "s0L1YFYzr4eGANAiVtmhPum9Us9pQnaT";
+      const secret = "goca51EHNnZnQHOA";
+      const auth = new Buffer.from(`${key}:${secret}`).toString("base64");
 
-    //   const tokenData = await axios.get(
-    //     "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         authorization: `Basic ${auth}`,
-    //       },
-    //     }
-    //   );
+      const tokenData = await axios.get(
+        `${proxy}/https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Basic ${auth}`,
+          },
+        }
+      );
 
-    //   console.log(tokenData);
-    // } catch (error) {
-    //   console.log(error);
-    //   alert(error.message);
-    // }
+      console.log(tokenData.data.access_token);
+
+      // const date = new Date();
+      // const timestamp =
+      //   date.getFullYear() +
+      //   ("0" + (date.getMonth() + 1)).slice(-2) +
+      //   ("0" + date.getDate()).slice(-2) +
+      //   ("0" + date.getHours()).slice(-2) +
+      //   ("0" + date.getMinutes()).slice(-2) +
+      //   ("0" + date.getSeconds()).slice(-2);
+      // const shortCode = 174379;
+      // const passkey =
+      //   "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+
+      // const password = new Buffer.from(
+      //   shortCode + passkey + timestamp
+      // ).toString("base64");
+
+      // axios.post(
+      //   `${proxy}/https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest`,
+      //   {
+      //     BusinessShortCode: shortCode,
+      //     Password: password,
+      //     Timestamp: timestamp,
+      //     TransactionType: "CustomerPayBillOnline",
+      //     Amount: details.amount,
+      //     PartyA: `254${details.phone.substring(1)}`,
+      //     PartyB: shortCode,
+      //     PhoneNumber: `254${details.phone.substring(1)}`,
+      //     CallBackURL: `https://mycalback.co.ke/callback`,
+      //     AccountReference: "ref",
+      //     TransactionDesc: "hello",
+      //   },
+      //   {
+      //     headers: {
+      //       Authorization: `Bearer ${tokenData.data.access_token}`,
+      //     },
+      //   }
+      // );
+    } catch (error) {
+      console.log(error);
+      alert(error.message);
+    }
   };
 
   return (
